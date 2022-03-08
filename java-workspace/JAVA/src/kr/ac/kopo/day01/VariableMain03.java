@@ -28,5 +28,7 @@ public class VariableMain03 {
 		// 경로쓸 때 2번
 		String path = "D:\\Lecture\\java-workspace";
 		System.out.println(path);
+		String str = "\"ab\"";
+		System.out.println(str);
 	}
 }
