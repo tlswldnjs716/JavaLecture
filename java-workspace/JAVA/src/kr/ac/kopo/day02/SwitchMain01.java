@@ -21,6 +21,7 @@ public class SwitchMain01 {
 		case 3:
 			System.out.println("THREE");
 			break;
+		//default는 마지막에 실행 
 		default: 
 			System.out.println("ERROR");
 		
