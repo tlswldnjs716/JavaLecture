@@ -2,6 +2,7 @@ package homework;
 
 import java.util.Scanner;
 
+//커밋하자
 public class Work10plus {
 	public static void main(String[] args) {
 		// 1번
