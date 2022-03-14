@@ -2,7 +2,7 @@ package homework;
 
 import java.util.Scanner;
 
-//push
+//push push
 public class Work10plus {
 	public static void main(String[] args) {
 		// 1¹ø
