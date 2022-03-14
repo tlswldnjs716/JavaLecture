@@ -9,7 +9,7 @@ public class Work6 {
 		int start = sc.nextInt();
 		System.out.print("종료단을 입력 : ");
 		int end = sc.nextInt();
-		if(start<end)
+		if(start<end) {
 		for(int i = start; i <=end ; i++) {
 			System.out.printf("*** %d단 *** \n", i);
 			for(int j=1; j<=9; j++) {
@@ -18,7 +18,8 @@ public class Work6 {
 			System.out.println();
 		
 		}
-		if(end<start)
+		}
+		else {
 			for(int i = end; i <=start ; i++) {
 				System.out.printf("*** %d단 *** \n", i);
 				for(int j=1; j<=9; j++) {
@@ -27,5 +28,6 @@ public class Work6 {
 				System.out.println();
 			
 			}
+		}
 	}
 }
