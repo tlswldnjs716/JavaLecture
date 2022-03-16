@@ -16,11 +16,13 @@ public class Work01 {
 		Ice[] arrice = new Ice[count];
 		int i;
 		for(i=0; i<count; i++) {
+			//3뒤에 엔터 버퍼버리기
+			sc.nextLine();
 			//객체 생성
 			arrice[i] = new Ice();
 			System.out.println("***" + (i+1)+ "번째 아이스크림 구매정보 ***");
 			System.out.print("아이스크림명: ");
-			arrice[i].icename = sc.next();
+			arrice[i].icename = sc.nextLine();
 			System.out.print("아이스크림 가격: ");
 			arrice[i].price = sc.nextInt();
 			
@@ -30,6 +32,8 @@ public class Work01 {
 		for(i=0; i<count; i++) {
 			System.out.println((i+1)+ "\t"+arrice[i].icename+ "\t"+arrice[i].price);
 		}
+		
+		//1.5버전의 출력은 인덱스를 만들지 않음
 		
 		System.out.print("총판매액 : ");
 		int allprice = 0;

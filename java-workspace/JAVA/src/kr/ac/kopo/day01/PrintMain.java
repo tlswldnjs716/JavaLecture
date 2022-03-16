@@ -5,20 +5,20 @@ public class PrintMain {
 	public static void main(String[] args) {
 		System.out.println(5>3);
 		System.out.println("gotohome");
-		System.out.println("´«´©³­³ª");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println('A');
 		System.out.println("Hello");
-		System.out.println(23 + '»ì');
-		System.out.println(23 + "»ì");
-//		%dÁ¤¼ö, %f½Ç¼ö, %c¹®ÀÚ, %s¹®ÀÚ¿­, %b³í¸®°ª
-//		' ' ½ºÆäÀÌ½º Ç¥±â, \n ¿£ÅÍ, \t ÅÇ
-		System.out.printf("%d»ì \n", 23);
+		//System.out.println(23 + 'ï¿½ï¿½');
+		System.out.println(23 + "ï¿½ï¿½");
+//		%dï¿½ï¿½ï¿½ï¿½, %fï¿½Ç¼ï¿½, %cï¿½ï¿½ï¿½ï¿½, %sï¿½ï¿½ï¿½Ú¿ï¿½, %bï¿½ï¿½ï¿½ï¿½
+//		' ' ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ Ç¥ï¿½ï¿½, \n ï¿½ï¿½ï¿½ï¿½, \t ï¿½ï¿½
+		System.out.printf("%dï¿½ï¿½ \n", 23);
 		System.out.printf("%d + %d =%d \n", 10, 20, 10+20);
-//		ÀÚ¸®¼ö ¸ÅÇÎ %7d -%7d
+//		ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ %7d -%7d
 		System.out.printf("[%7d] \n", 100);
 		System.out.printf("[%7d] \n", 1000);
 		System.out.printf("[%7d] \n", 10000);
-//		¼Ò¼öÁ¡ ÀÚ¸£±â, ¿Ã¸²
+//		ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½, ï¿½Ã¸ï¿½
 		System.out.printf("[%.2f] \n", 278.899);
 		System.out.printf("%b",true);
 	}
