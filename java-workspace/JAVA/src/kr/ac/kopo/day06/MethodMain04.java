@@ -18,7 +18,7 @@ public class MethodMain04 {
 		System.out.print("종료단 입력 : ");
 		int endDan = gu.getDan();
 		
-		System.out.println(startDan + " : " + endDan);
+		gu.print(startDan, endDan);
 		
 	}
 }

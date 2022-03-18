@@ -10,6 +10,10 @@ public class Gugudan {
 		return dan;
 	}
 	
+	/**
+	 * 파라미터로 날라온 정수의 해단 구구단을 출력
+	 * @param dan 출력단
+	 */
 	void print(int dan) {
 		System.out.println("*** " + dan + "단 ***");
 		for(int i = 1; i <= 9; i++) {
@@ -17,9 +21,25 @@ public class Gugudan {
 		}
 	}
 	
+	/**
+	 * 2 - 9단사이의 구구단 출력
+	 */
 	void print() {
+	
+		print(2, 9);
 		
-		for(int dan = 2; dan <= 9; dan++) {
+//		for(int dan = 2; dan <= 9; dan++) {
+//			print(dan);
+//		}
+	}
+	
+	/**
+	 * 파라미터로 날라온 시작단~종료단 사이의 구구단 출력
+	 * @param start  시작단
+	 * @param end    종료단
+	 */
+	void print(int start, int end) {
+		for(int dan = start; dan <= end; dan++) {
 			print(dan);
 		}
 	}
