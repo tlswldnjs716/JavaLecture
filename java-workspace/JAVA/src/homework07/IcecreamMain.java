@@ -1,4 +1,4 @@
-package kr.ac.kopo.day08.homework;
+package homework07;
 
 public class IcecreamMain {
 
