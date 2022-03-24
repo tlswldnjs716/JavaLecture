@@ -19,7 +19,7 @@ public class DateMain {
 		//System.out.println(month);
 		//Calendar에서 상수변수로 만들었음
 		int year = c.get(Calendar.YEAR);
-		int month = c.get(Calendar.MONTH);
+		int month = c.get(Calendar.MONTH)+1;
 		int date = c.get(Calendar.DAY_OF_MONTH);
 		int day = c.get(Calendar.DAY_OF_WEEK);//1~7
 		String[] week = {" ","일", "월", "화", "수", "목", "금", "토"};
