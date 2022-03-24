@@ -7,6 +7,7 @@ import java.util.Date;
 public class DateMain {
 	//private를 수정하고 볼 수 있게 하기위해 set, get을 사용
 	public static void main(String[] args) {
+		//date클래스보다 canlendar클래스를 이용하는 것이 좋음
 		//getInstance를 사용해 GregorianCalendar객체를 리턴
 		//묵시적 형변환
 		Calendar c = Calendar.getInstance();
