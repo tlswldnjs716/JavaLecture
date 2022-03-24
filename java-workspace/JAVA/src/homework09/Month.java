@@ -1,7 +1,6 @@
 package homework09;
 
 import java.util.Calendar;
-import java.util.Scanner;
 
 public class Month {
 	Calendar c = Calendar.getInstance();
@@ -14,7 +13,7 @@ public class Month {
 			//마지막날짜
 			int lastday = c.getActualMaximum(Calendar.DATE);
 			//요일구하기
-			int week =c.get(c.DAY_OF_WEEK);
+			int week =c.get(Calendar.DAY_OF_WEEK);
 			
 			//첫줄 처리 
 			for(int hole = 1; hole < week; hole++) {

@@ -34,9 +34,15 @@ public class Choose {
 		}
 	}
 	public void process() {
-
+		while(true) {
 		int choose = select();
 		choosemenu(choose);
+		if(choose == 3) {
+			//패키지가 다르니까 exit는 public
+			System.exit(0);
+			//프로그램을 완전 종료하고 싶을 때 System.exit(0);
+		}
+		}
 	}
 	
 }
