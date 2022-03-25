@@ -1,5 +1,8 @@
 package homework10;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /*
 로또 게임
 게임수를 입력하세요 : 3
@@ -12,17 +15,17 @@ class LottoUtil {
 
    public void start() {
 	//게임수 입력
+	   Scanner sc = new Scanner(System.in);
+	   int cnt = Integer.parseInt(sc.nextLine());
        for(int i = 0; i < cnt; i++) {
-
-	   게임1 : Arrays.toString(getNumbers())
+    	   System.out.println("게임1 : "+ Arrays.toString(getNumbers()));
        }
-
    }
 
    private int[] getNumbers() {
-
+	return null;
 	// 1 ~ 45 사이의 로또번호 6개 추출
    }
-
+   
 
 }
