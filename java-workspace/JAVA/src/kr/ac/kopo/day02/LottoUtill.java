@@ -2,22 +2,22 @@ package kr.ac.kopo.day02;
 
 import java.util.Random;
 
-//¹®¼­¿ë ÁÖ¼®
+//ë¬¸ì„œìš© ì£¼ì„
 /**
- * ·Î¶Ç¿Í °ü·ÃµÈ ¿©·¯°¡Áö ±â´ÉÅ¬·¡½º
- * @author È«±æµ¿
+ * ë¡œë˜ì™€ ê´€ë ¨ëœ ì—¬ëŸ¬ê°€ì§€ ê¸°ëŠ¥í´ë˜ìŠ¤
+ * @author í™ê¸¸ë™
  *
  */
 public class LottoUtill {
 	/**
-	 * ·Î¶Ç¸¦ ¸¸µå´Â Å¬·¡½º
+	 * ë¡œë˜ë¥¼ ë§Œë“œëŠ” í´ë˜ìŠ¤
 	 */
 	public void todayProbability() {
 		//random
 		//Math.random
 		Random r = new Random();
-		//ÀÓÀÇÀÇ ³­¼ö ÃßÃâ
+		//ì„ì˜ì˜ ë‚œìˆ˜ ì¶”ì¶œ
 		r.nextInt(101);//0~100
-		System.out.println("¿À´ÃÀÇ ·Î¶Ç È®·üÀº" + "%ÀÔ´Ï´Ù");
+		System.out.println("ì˜¤ëŠ˜ì˜ ë¡œë˜ í™•ë¥ ì€" + "%ì…ë‹ˆë‹¤");
 	}
 }
