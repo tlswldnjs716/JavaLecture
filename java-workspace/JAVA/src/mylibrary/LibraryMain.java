@@ -1,4 +1,4 @@
-package library.inmemory;
+package mylibrary;
 
 public class LibraryMain {
 	public static void main(String[] args) {

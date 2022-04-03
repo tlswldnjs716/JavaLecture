@@ -1,4 +1,4 @@
-package library.inmemory;
+package mylibrary;
 
 public interface MemberInterface {
 	public void signUp();

@@ -1,4 +1,4 @@
-package library.inmemory;
+package mylibrary;
 
 import java.util.Scanner;
 

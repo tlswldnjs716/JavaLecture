@@ -1,4 +1,4 @@
-package library.inmemory;
+package mylibrary;
 
 import java.util.Scanner;
 
@@ -62,7 +62,7 @@ public class Menu {
 		//book.printBooklist();
 		while (bool) {
 			System.out.println("메뉴를 선택하세요.");
-			System.out.print("1. 도서대출\t 2.도서반납\t 3.대여도서검색\t 4.종료 ==> ");
+			System.out.print("1. 도서대출\t 2.도서반납 \t 3.종료 ==> ");
 			int num = sc.nextInt();
 	
 			switch (num) {
@@ -75,15 +75,6 @@ public class Menu {
 				book.bookReturn();
 				break;
 			case 3:
-				System.out.println("----------------- << 도서 검색 >> ------------------");
-			
-				System.out.println("현재 내가 빌린 책");
-				System.out.println();
-				System.out.println("<< [ " + member.getLoginedId() + " ] 님 의 대출 목록  >>");
-				book.printBookList(book.getRentedBook());
-
-				break;
-			case 4:
 				System.out.println("종료되었습니다.");
 				bool = false;
 			}
@@ -97,7 +88,7 @@ public class Menu {
 		boolean bool = true;
 		while (bool) {
 			System.out.println("메뉴를 선택하세요.");
-			System.out.print("1. 도서등록\t 2.도서삭제 \t 3.전체 도서 조회\t 4.전체 회원 조회\t 5.종료  ==> ");
+			System.out.print("1. 도서등록\t 2.도서삭제 \t 3.전체 도서 조회\t 4.대여중인 도서 조회\t 5.전체 회원 조회\t 6.종료  ==> ");
 			int num = sc.nextInt();
 			switch (num) {
 			case 1:
@@ -113,10 +104,14 @@ public class Menu {
 				book.printBookList(book.getBookList());
 				break;
 			case 4:
+				System.out.println("----------------- << 대여중인 도서 목록 >> ------------- ");
+				book.printBookList(book.getRentedBook());
+				break;
+			case 5:
 				System.out.println("----------------- << 전체 회원 목록 >> ------------- ");
 				member.printMemberList(member.getMemberList());
 				break;
-			case 5:
+			case 6:
 				System.out.println("종료되었습니다.");
 				bool = false;
 			}

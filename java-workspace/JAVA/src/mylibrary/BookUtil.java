@@ -1,10 +1,12 @@
-package library.inmemory;
+package mylibrary;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 public class BookUtil implements BookInterface{
+	Member member = new Member();
 	Scanner sc = new Scanner(System.in);
 	//도서목록
 	private List<Book> bookList = new ArrayList<Book>();
@@ -26,11 +28,12 @@ public class BookUtil implements BookInterface{
 	}
 	
 	//빌린 목록 설정
+	//빌린 목록이 사용자마다 정의된게 아니라서 다른 사람이 빌린 책을 다른 사람이 반납하는 아이러니가 생겼음...
 	public void setRentedBook(ArrayList<Book> rentedBook) {
 		this.rentedBook = rentedBook;
 	}
 	
-	//도서목록출력
+	//전체도서목록출력
 	public void printBookList(List<Book> List) {
 		System.out.println("도서id\t도서명\t지은이");
 		for (Book b : List) {
@@ -57,7 +60,7 @@ public class BookUtil implements BookInterface{
 			}
 		}while(registered == true);
 		
-		bookinfo.setId(bookCode);
+		bookinfo.setCode(bookCode);
 		
 		System.out.print("책 이름 입력 : ");
 		bookName = sc.nextLine();
@@ -77,15 +80,18 @@ public class BookUtil implements BookInterface{
 		System.out.println("삭제할 책의 코드를 입력하세요: ");
 		int bookCode = Integer.parseInt(sc.nextLine());
 		
-		for(Book book: bookList) {
-			if(bookCode == book.getCode()) {
-				bookList.remove(book);
-			}	
+		//삭제예외처리를 위해 이터레이터 사용
+		Iterator<Book> itebook = bookList.iterator();
+		
+		while(itebook.hasNext()){
+			Book book = itebook.next();
+			if(bookCode == book.getCode()){
+				itebook.remove();
+			}
 		}
 		System.out.println("삭제되었습니다");
 		System.out.println("<< 삭제 후 전체 책 목록 >>");
 		printBookList(bookList);
-
 	}
 	
 	//도서대여
@@ -123,20 +129,22 @@ public class BookUtil implements BookInterface{
 		System.out.println("반납할 책 이름을 입력하세요.");
 		String bookName = sc.nextLine();
 		
-		for (Book book : bookList) {
-			if (bookName.equals(book.getBookname())) {
-				if (book.isRental()) {
-					// 반납으로 변경
-					System.out.println("반납되었습니다");
-					book.setRental(false);
-					rentedBook.remove(book);
+		//삭제예외처리를 위해 이터레이터 사용
+				Iterator<Book> itebook = rentedBook.iterator();
+				
+				while(itebook.hasNext()){
+					Book book = itebook.next();
+					if(bookName.equals(book.getBookname())){
+						if (book.isRental()) {
+							// 반납으로 변경
+							System.out.println("반납되었습니다");
+							book.setRental(false);
+							itebook.remove();
+						}
+						else {
+							System.out.println("대여중이 아닙니다.");
+						}
+					}
 				}
-			}
-			else {
-				System.out.println("대여중이 아닙니다.");
-			}
-		}
-		System.out.println("대출한 목록");
-		printBookList(rentedBook);
 	}
 }
