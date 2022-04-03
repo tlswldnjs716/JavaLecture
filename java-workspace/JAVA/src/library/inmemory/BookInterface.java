@@ -1,4 +1,4 @@
-package library;
+package library.inmemory;
 
 public interface BookInterface {
 		//도서대여

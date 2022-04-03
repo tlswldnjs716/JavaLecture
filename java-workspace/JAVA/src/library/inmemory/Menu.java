@@ -1,4 +1,4 @@
-package library;
+package library.inmemory;
 
 import java.util.Scanner;
 
@@ -17,13 +17,13 @@ public class Menu {
 		
 		while (bool) {
 			System.out.println();
-			System.out.print("1.관리자로그인\t 2.사용자로그인\t 3.회원가입\t 4.종료 ==>");
+			System.out.print("1.관리자로그인\t 2.사용자로그인\t 3.회원가입\t 4.회원탈퇴\t 5.종료 ==>");
 			int num = sc.nextInt();
 			System.out.println();
 
 			switch (num) {
 			case 1:
-				System.out.println("관리자 로그인 페이지입니다.");
+				System.out.println("관리자 로그인");
 				member.login();
 				if ((member.getLoginedId().equals("admin"))) {
 					System.out.println("[ " + member.getLoginedId() + " ] 관리자  계정으로  로그인 되었습니다.");
@@ -46,6 +46,9 @@ public class Menu {
 				member.signUp();
 				break;
 			case 4:
+				member.signOut();
+				break;
+			case 5:
 				System.out.println("종료되었습니다.");
 				bool = false;
 			}
@@ -59,7 +62,7 @@ public class Menu {
 		//book.printBooklist();
 		while (bool) {
 			System.out.println("메뉴를 선택하세요.");
-			System.out.print("1. 도서대출\t 2.도서반납\t 3.도서검색\t 4.종료 ==> ");
+			System.out.print("1. 도서대출\t 2.도서반납\t 3.대여도서검색\t 4.종료 ==> ");
 			int num = sc.nextInt();
 	
 			switch (num) {
@@ -75,7 +78,6 @@ public class Menu {
 				System.out.println("----------------- << 도서 검색 >> ------------------");
 			
 				System.out.println("현재 내가 빌린 책");
-
 				System.out.println();
 				System.out.println("<< [ " + member.getLoginedId() + " ] 님 의 대출 목록  >>");
 				book.printBookList(book.getRentedBook());
@@ -95,7 +97,7 @@ public class Menu {
 		boolean bool = true;
 		while (bool) {
 			System.out.println("메뉴를 선택하세요.");
-			System.out.print("1. 도서등록\t 2.도서삭제 \t 3.전체 도서 조회\t 4.종료  ==> ");
+			System.out.print("1. 도서등록\t 2.도서삭제 \t 3.전체 도서 조회\t 4.전체 회원 조회\t 5.종료  ==> ");
 			int num = sc.nextInt();
 			switch (num) {
 			case 1:
@@ -108,9 +110,13 @@ public class Menu {
 				break;
 			case 3:
 				System.out.println("----------------- << 전체 도서 목록 >> ------------- ");
-				book.printBooklist(book.getAllBookList());
+				book.printBookList(book.getBookList());
 				break;
 			case 4:
+				System.out.println("----------------- << 전체 회원 목록 >> ------------- ");
+				member.printMemberList(member.getMemberList());
+				break;
+			case 5:
 				System.out.println("종료되었습니다.");
 				bool = false;
 			}

@@ -1,4 +1,4 @@
-package library;
+package library.inmemory;
 
 public interface MemberInterface {
 	public void signUp();
