@@ -4,6 +4,7 @@ public class Book {
 	private int bookCode;
 	private String bookName;
 	private String writer;
+	private String checkId;
 	private boolean isBorrow;
 	
 	//필드 없는 생성자
@@ -11,15 +12,17 @@ public class Book {
 		bookName = "";
 		writer ="";
 		isBorrow = false;
+		checkId = "";
 	}
 	
 	//필드 있는 생성자
-	public Book(int bookCode, String bookName, String writer) {
+	public Book(int bookCode, String bookName, String writer, String checkId) {
 		this.bookCode = bookCode;
 		this.bookName = bookName;
 		this.writer = writer;
 		//처음에는 아무도 안 빌린 상태
 		isBorrow = false;
+		this.checkId = checkId;
 		
 	}
 	
@@ -33,6 +36,21 @@ public class Book {
 		isBorrow = borrowed;
 	}
 	
+	// 아이디 받기&설정
+	/**
+	 * @return the checkId
+	 */
+	public String getCheckId() {
+		return checkId;
+	}
+
+	/**
+	 * @param checkId the checkId to set
+	 */
+	public void setCheckId(String checkId) {
+		this.checkId = checkId;
+	}
+		
 	//bookid, 중복체크를 위한 코드
 	public int getCode() {
 		return bookCode;

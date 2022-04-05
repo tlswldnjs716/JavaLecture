@@ -10,6 +10,7 @@ public class BookUtil implements BookInterface{
 	Scanner sc = new Scanner(System.in);
 	//도서목록
 	private List<Book> bookList = new ArrayList<Book>();
+	
 	//빌린도서목록
 	private List<Book> rentedBook = new ArrayList<Book>();
 
@@ -45,9 +46,9 @@ public class BookUtil implements BookInterface{
 	//책의 이름, 저자이름이 달라야 새로운 코드를 가질 수 있음
 	@Override
 	public void bookAdd(){
-		int bookCode = 0; String bookName = null, writer = null;
+		int bookCode = 0; String bookName = null, writer = null, checkId = null; 
 		boolean registered;
-		Book bookinfo = new Book(bookCode, bookName, writer);
+		Book bookinfo = new Book(bookCode, bookName, writer, checkId);
 		do {
 			registered = false;
 			System.out.println("책의 코드를 입력하세요.");
@@ -61,6 +62,7 @@ public class BookUtil implements BookInterface{
 		}while(registered == true);
 		
 		bookinfo.setCode(bookCode);
+		bookinfo.setCheckId(checkId);
 		
 		System.out.print("책 이름 입력 : ");
 		bookName = sc.nextLine();
@@ -112,7 +114,7 @@ public class BookUtil implements BookInterface{
 					System.out.println("이미 대여 중입니다.");
 				} else {
 					System.out.println("도서명 : " + book.getBookname() + "이 대여되었습니다.");
-					
+					book.setCheckId(MemberUtil.getLoginedId());
 					book.setRental(true);
 					rentedBook.add(book);
 				}
@@ -131,13 +133,15 @@ public class BookUtil implements BookInterface{
 		
 		//삭제예외처리를 위해 이터레이터 사용
 				Iterator<Book> itebook = rentedBook.iterator();
-				
 				while(itebook.hasNext()){
 					Book book = itebook.next();
 					if(bookName.equals(book.getBookname())){
 						if (book.isRental()) {
 							// 반납으로 변경
+							System.out.println(MemberUtil.getLoginedId());
+							if(MemberUtil.getLoginedId().equals(book.getCheckId())) {
 							System.out.println("반납되었습니다");
+							}
 							book.setRental(false);
 							itebook.remove();
 						}

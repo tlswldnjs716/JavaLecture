@@ -13,11 +13,11 @@ public class MemberUtil implements MemberInterface {
 	}
 
 	// 로그인 된 아이디
-	private String loginedId;
+	private static String loginedId;
 	// 로그인 된 pwd
 	private String loginedPw;
 
-	public String getLoginedId() {
+	static public String getLoginedId() {
 		return loginedId;
 	}
 

@@ -72,6 +72,7 @@ public class Menu {
 				break;
 			case 2:
 				System.out.println("----------------- << 도서 반납 >> ------------------ ");
+				//book.printBookList(book.getRentedBook());
 				book.bookReturn();
 				break;
 			case 3:
