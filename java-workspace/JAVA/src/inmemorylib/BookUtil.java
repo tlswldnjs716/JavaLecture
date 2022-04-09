@@ -29,7 +29,6 @@ public class BookUtil implements BookInterface{
 	}
 	
 	//빌린 목록 설정
-	//빌린 목록이 사용자마다 정의된게 아니라서 다른 사람이 빌린 책을 다른 사람이 반납하는 아이러니가 생겼음...
 	public void setRentedBook(ArrayList<Book> rentedBook) {
 		this.rentedBook = rentedBook;
 	}

@@ -27,7 +27,7 @@ public class MemberUtil implements MemberInterface {
 
 	@Override
 	public void signUp() {
-		System.out.println("========= 회원 가입 =========");
+		System.out.println("<< 회원 가입 >>");
 
 		Member member = new Member();
 
@@ -61,7 +61,7 @@ public class MemberUtil implements MemberInterface {
 
 	@Override
 	public void login() {
-		System.out.println("==== 로그인 ====");
+		System.out.println("<< 로그인 >>");
 		System.out.println("아이디 : ");
 		String ID = sc.nextLine();
 		System.out.println("비밀번호 : ");
@@ -91,7 +91,7 @@ public class MemberUtil implements MemberInterface {
 
 	@Override
 	public void signOut() {
-		System.out.println("==== 회원탈퇴 ====");
+		System.out.println("<< 회원탈퇴 >>");
 		System.out.println("아이디 : ");
 		String ID = sc.nextLine();
 		System.out.println("비밀번호 : ");
