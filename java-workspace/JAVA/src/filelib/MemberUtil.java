@@ -45,8 +45,8 @@ public class MemberUtil implements MemberInterface{
 			boolean registered = false;
 			
 			while((line = br.readLine()) != null) {
-				String[] temp = line.split(",");
-				if(ID.equals(temp[0])) {
+				String[] ListID = line.split(",");
+				if(ID.equals(ListID[0])) {
 					System.out.println("이미 등록된 아이디입니다.");
 					registered = true;
 					break;
