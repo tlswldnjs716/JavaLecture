@@ -64,7 +64,7 @@ public class MemberUtil implements MemberInterface{
 				FileWriter fw;
 				
 				try {
-					
+					System.out.println();
 					fw = new FileWriter("librarydata/memberlist", true);
 					
 					System.out.println();

@@ -41,10 +41,10 @@ public class BookUtil implements BookInterface{
 	}
 
 	//책 정보 출력
-	public void printBookList(ArrayList<Book> bookList) {
+	public void printBookList(ArrayList<Book> List) {
 		
 		System.out.println("도서id\t도서명\t지은이 \t장르");
-		for (Book b : bookList) {
+		for (Book b : List) {
 			System.out.println(b.getBookCode() + "\t" + b.getBookName() + "\t" + b.getWriter() + "\t");
 		}
 	}
@@ -74,10 +74,10 @@ public class BookUtil implements BookInterface{
 	// Day13 IOMain06참고
 	@Override
 	public void borrow() {
-		System.out.print("대여할 책의 이름을 입력하세요 : ");
+		System.out.println("대여할 책의 이름을 입력하세요 : ");
+		
 		// 빌리고 싶은 책이름
 		String bookName = sc.nextLine();
-		System.out.println();
 
 		boolean registered = false;
 
@@ -103,13 +103,14 @@ public class BookUtil implements BookInterface{
 	public void bookReturn() {
 		printBookList(rentedBook);
 		System.out.println("반납할 책의 코드를 입력하세요.");
-		int bookCode = sc.nextInt();
+		int bookCode = Integer.parseInt(sc.nextLine());
 
 		for (Book storedBook : allBookList) {
 			if (bookCode == storedBook.getBookCode()) {
 				if (storedBook.isBarrow()) {
 					System.out.println(storedBook.getBookName() + "이 정상적으로 반납되었습니다.");
 					storedBook.setBarrow(false);
+					//삭제 방지를 위해 iterator를 사용했는데 문제가 발생해서 한개씩 확인하는 방법을 택함
 					for(int j = 0; j< rentedBook.size(); j++) {
 						if(bookCode == rentedBook.get(j).getBookCode()) {
 							rentedBook.remove(j);							
@@ -210,7 +211,7 @@ public class BookUtil implements BookInterface{
 		System.out.println();
 		System.out.print("삭제할 책의 id를 입력해 주세요 : ");
 		
-		int id = sc.nextInt();
+		int id = Integer.parseInt(sc.nextLine());
 		
 		/*
 		for (Book allBook : allBookList) {
