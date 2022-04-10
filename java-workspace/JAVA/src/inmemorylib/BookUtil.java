@@ -137,7 +137,7 @@ public class BookUtil implements BookInterface{
 					if(bookName.equals(book.getBookname())){
 						if (book.isRental()) {
 							// 반납으로 변경
-							System.out.println(MemberUtil.getLoginedId());
+							//System.out.println(MemberUtil.getLoginedId());
 							if(MemberUtil.getLoginedId().equals(book.getCheckId())) {
 							System.out.println("반납되었습니다");
 							}
