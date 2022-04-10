@@ -43,7 +43,7 @@ public class BookUtil implements BookInterface{
 	//책 정보 출력
 	public void printBookList(ArrayList<Book> List) {
 		
-		System.out.println("도서id\t도서명\t지은이 \t장르");
+		System.out.println("도서코드\t도서명\t작가");
 		for (Book b : List) {
 			System.out.println(b.getBookCode() + "\t" + b.getBookName() + "\t" + b.getWriter() + "\t");
 		}
@@ -171,7 +171,7 @@ public class BookUtil implements BookInterface{
 			System.out.print("책 이름 입력 : ");
 			bookName = sc.nextLine();
 			bookinfo.setBookName(bookName);
-			System.out.print("저자 입력 : ");
+			System.out.print("작가 입력 : ");
 			writer = sc.nextLine();
 			bookinfo.setWriter(writer);
 			
