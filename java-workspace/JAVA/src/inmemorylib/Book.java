@@ -37,6 +37,7 @@ public class Book {
 	}
 	
 	// 아이디 받기&설정
+	// 로그인 한 아이디인지 확인하기 위함
 	/**
 	 * @return the checkId
 	 */

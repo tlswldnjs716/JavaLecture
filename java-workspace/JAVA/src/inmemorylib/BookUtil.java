@@ -35,7 +35,7 @@ public class BookUtil implements BookInterface{
 	
 	//전체도서목록출력
 	public void printBookList(List<Book> List) {
-		System.out.println("도서id\t도서명\t지은이");
+		System.out.println("도서코드\t도서명\t작가");
 		for (Book b : List) {
 			System.out.println(b.getCode()+"\t"+b.getBookname() + "\t" + b.getWriter());
 		}
@@ -138,6 +138,7 @@ public class BookUtil implements BookInterface{
 						if (book.isRental()) {
 							// 반납으로 변경
 							//System.out.println(MemberUtil.getLoginedId());
+							// 반납자가 로그인한 사람이 맞는지 확인
 							if(MemberUtil.getLoginedId().equals(book.getCheckId())) {
 							System.out.println("반납되었습니다");
 							}
