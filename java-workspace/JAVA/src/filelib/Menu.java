@@ -9,7 +9,7 @@ public class Menu {
 
 	public void process() {
 
-		System.out.println("<< 도서 관리 프로그램 >>");
+		System.out.println("<< 지원 도서관 >>");
 
 		System.out.println("로그인이 필요합니다.");
 

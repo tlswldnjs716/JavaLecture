@@ -5,6 +5,7 @@ public class Book {
 	private int bookCode;
 	private String bookName;
 	private String writer;
+	//빌렸는지 확인
 	private boolean barrow;
 
 	public Book() {
